@@ -1,0 +1,18 @@
+{
+  "extends": [
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "semi": 0,
+    "no-underscore-dangle": 0,
+    "import/prefer-default-export": 0
+  }
+}

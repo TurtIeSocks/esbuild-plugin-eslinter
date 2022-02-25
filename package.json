@@ -1,0 +1,37 @@
+{
+  "name": "esbuild-plugin-eslinter",
+  "version": "0.1.0",
+  "description": "esbuild plugin for integrating eslint with built in caching and node_module skipping",
+  "keywords": [
+    "esbuild",
+    "eslint",
+    "plugin",
+    "typescript",
+    "eslinter"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "ts-node test/esbuild.config.ts"
+  },
+  "author": "TurtIeSocks <58572875+TurtIeSocks@users.noreply.github.com>",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/eslint": "^8.0.0",
+    "@types/node": "^17.0.21",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
+    "esbuild": "^0.14.0",
+    "eslint": "^8.9.0",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  },
+  "peerDependencies": {
+    "esbuild": "^0.14.0",
+    "eslint": "^8.0.0"
+  }
+}
