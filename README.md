@@ -40,5 +40,5 @@ build({
 
 ## Development Notes
 
-- Build with project with `yarn build`
+- Compile the TypeScript with `yarn build`
 - "Test" the project with `yarn test` (runs a test esbuild in the console)
