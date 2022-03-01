@@ -4,7 +4,7 @@
 
 ## Description
 
-[esbuild](https://github.com/evanw/esbuild) plugin for integrating your ESLint rules into your build process. Automatically marks node_modules as external to avoid linting them and caches results each build to drastically decrease watch build time.
+[esbuild](https://github.com/evanw/esbuild) plugin for integrating your ESLint rules into your build process. Automatically skips linting node_modules and caches the results for optimal rebuilds when watching.
 
 ## Installing
 

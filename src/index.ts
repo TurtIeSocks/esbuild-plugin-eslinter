@@ -9,20 +9,16 @@ export const eslintPlugin = (): Plugin => ({
     const formatter = await linter.loadFormatter()
     // https://esbuild.github.io/plugins/#caching-your-plugin
     const cache = new Map()
-    // https://github.com/evanw/esbuild/issues/619
-    build.onResolve({ filter: /^[^./]|^\.[^./]|^\.\.[^/]/ }, (args) => ({
-      path: args.path,
-      external: true,
-    }))
-    build.onLoad({ filter: /\.(jsx?|tsx?)$/ }, async (args) => {
-      const input = await fs.readFile(args.path, 'utf8')
-      const key = args.path
-      let value = cache.get(key)
+    build.onLoad({ filter: /\.(jsx?|tsx?)$/ }, async ({ path }) => {
+      const isNodeModule = /node_modules/.test(path)
+
+      const input = isNodeModule ? 0 : await fs.readFile(path, 'utf8')
+      let value = cache.get(path)
 
       if (!value || value.input !== input) {
-        const contents = await linter.lintFiles(args.path)
+        const contents = isNodeModule ? [] : await linter.lintFiles(path)
         value = { input, output: { contents } }
-        cache.set(key, value)
+        cache.set(path, value)
 
         if (contents[0]?.messages?.length) {
           return { warnings: [{ text: formatter.format(contents) as string }] }
