@@ -32,10 +32,18 @@ build({
   bundle: true
   outfile: "dist/bundle.js",
   target: "es2020",
-  plugins: [eslintPlugin()],
+  plugins: [eslintPlugin({ persistLintIssues: true })],
 }).then(() => {
   console.log("Build Complete")
 })
+```
+
+## Config
+
+```typescript
+interface Config {
+  persistLintIssues?: boolean
+}
 ```
 
 ## Development Notes
