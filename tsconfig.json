@@ -6,7 +6,6 @@
     "module": "CommonJS",
     "target": "ES2020",
     "moduleResolution": "node",
-    "removeComments": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "declaration": true,

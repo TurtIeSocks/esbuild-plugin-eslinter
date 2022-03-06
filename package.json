@@ -1,6 +1,6 @@
 {
   "name": "esbuild-plugin-eslinter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "esbuild plugin for integrating eslint with built in caching and node_module skipping",
   "keywords": [
     "esbuild",
@@ -35,6 +35,7 @@
     "@typescript-eslint/parser": "^5.12.1",
     "esbuild": "^0.14.0",
     "eslint": "^8.9.0",
+    "prettier": "^2.5.1",
     "ts-node": "^10.5.0",
     "typescript": "^4.5.5"
   },
